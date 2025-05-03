@@ -1,8 +1,12 @@
-import styled from 'styled-components'
+import { keyframes } from "styled-components"
+import styled  from 'styled-components'
 
-
-
-
+const fadeInOut = keyframes`
+         0% { opacity: 0; transform: translateY(-10px); }
+        10% { opacity: 1; transform: translateY(0); }
+        90% { opacity: 1; transform: translateY(0); }
+        100% { opacity: 0; transform: translateY(-10px); }
+ `
 
 export const Title = styled.h2`
         color: #fff;
@@ -67,6 +71,18 @@ export const InputLabel = styled.label`  // label do nome*, idade* e email*
             color: #ef4f45;
             font-weight: bold;
         }
+`
+
+export const SuccessMessage = styled.div`    // baner de sucesso
+        background-Color: #d4edda;
+        color: #006400;
+        padding: 10px 20px;
+        border-Radius: 5px;
+        margin: 15px 0;
+        border: 1px solid #c3e6cb;
+        text-Align: center;
+        animation: ${fadeInOut} 3s ease-in-out forwards;
+
 `
 
 

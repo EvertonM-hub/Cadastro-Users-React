@@ -1,7 +1,7 @@
-import { useRef } from 'react'; 
+import { useRef, useState } from 'react'; 
 import { useNavigate } from 'react-router-dom';
 import api from '../../services/api';
-import { Title, Container, Form, ContainerInputs,  Input, InputLabel   } from './styles'
+import { Title, Container, Form, ContainerInputs,  Input, InputLabel, SuccessMessage   } from './styles'
 import  Button  from '../../components/Button'
 import TopBackground from '../../components/TopBackground'
 
@@ -11,10 +11,13 @@ import TopBackground from '../../components/TopBackground'
 
 function Home() { // no react componentes  sempre com a primeira letra maiuscula, dentro de function cria arquivos JS. Depois de return arquivos Js com html
 
+ 
   const inputName = useRef()
   const inputAge = useRef()
   const inputEmail = useRef()
 
+  
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false)
   const navigate = useNavigate()
 
     async function registerNewUser(){
@@ -23,6 +26,12 @@ function Home() { // no react componentes  sempre com a primeira letra maiuscula
           age: parseInt (inputAge.current.value),  // parseInt transforma em número inteiro, ele vai como padrao string
           email: inputEmail.current.value
     })
+
+    setShowSuccessMessage(true)
+
+    setTimeout(() => {
+      setShowSuccessMessage(false)
+    }, 3000)
    
     
   }
@@ -33,6 +42,13 @@ function Home() { // no react componentes  sempre com a primeira letra maiuscula
 
       <Container>
         <TopBackground />
+
+        {showSuccessMessage && (
+  <SuccessMessage>
+        ✅ Usuário cadastrado com sucesso!
+    </SuccessMessage>
+)}
+
        
      
 

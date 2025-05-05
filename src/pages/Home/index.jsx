@@ -27,10 +27,10 @@ function Home() { // no react componentes  sempre com a primeira letra maiuscula
           email: inputEmail.current.value
     })
 
-    setShowSuccessMessage(true)
+    setShowSuccessMessage(true)  // setShowSuccessMessage é uma função que vai setar o valor de showSuccessMessage para true
 
-    setTimeout(() => {
-      setShowSuccessMessage(false)
+    setTimeout(() => {   //setTimeout é uma função que executa uma função depois de um determinado tempo, nesse caso 3 segundos
+      setShowSuccessMessage(false)  //
     }, 3000)
    
     

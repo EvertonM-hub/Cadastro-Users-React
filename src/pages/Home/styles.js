@@ -79,9 +79,10 @@ export const SuccessMessage = styled.div`    // baner de sucesso
         padding: 10px 20px;
         border-Radius: 5px;
         margin: 15px 0;
-        border: 1px solid #c3e6cb;
+        border: 1px solid #000000;
         text-Align: center;
         animation: ${fadeInOut} 3s ease-in-out forwards;
+        border-radius: 10px;
 
 `
 
